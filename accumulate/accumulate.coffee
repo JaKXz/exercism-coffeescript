@@ -1,4 +1,4 @@
-Array::accumulate = (fn) ->
+Array::accumulate = (operation) ->
   result = []
-  @forEach (elem) -> result.push fn elem
+  result[i] = operation element for element, i in this
   result
