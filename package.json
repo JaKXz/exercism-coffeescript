@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/JaKXz/exercism-coffeescript/issues"
   },
-  "homepage": "https://github.com/JaKXz/exercism-coffeescript#readme"
+  "homepage": "https://github.com/JaKXz/exercism-coffeescript#readme",
+  "devDependencies": {
+    "jasmine-node": "^2.0.0-beta4"
+  }
 }
