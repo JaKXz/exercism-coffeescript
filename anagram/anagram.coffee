@@ -1,3 +1,5 @@
+"use strict"
+
 module.exports = class Anagram
   constructor: (@input) ->
     @processedInput = sortCharacters @input.toLowerCase()

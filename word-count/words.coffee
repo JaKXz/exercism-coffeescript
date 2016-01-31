@@ -1,3 +1,5 @@
+"use strict"
+
 module.exports = class Words
   constructor: (@input) ->
 
@@ -7,7 +9,7 @@ module.exports = class Words
       .replace(/\W/g, ' ')
       .trim()
       .split(/\s+/g)
-      .reduce ((words, word) ->
-        words[word]++ || words[word] = 1
-        words
+      .reduce ((wordCounts, word) ->
+        wordCounts[word]++ || wordCounts[word] = 1
+        wordCounts
       ), {}

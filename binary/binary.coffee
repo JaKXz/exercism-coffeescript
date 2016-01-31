@@ -1,3 +1,5 @@
+"use strict"
+
 module.exports = class Binary
   constructor: (input) ->
     @input = input.split ''
