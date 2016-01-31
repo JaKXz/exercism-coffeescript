@@ -3,9 +3,9 @@
 module.exports = class Triangle
   constructor: (@a, @b, @c) ->
     if [@a, @b, @c].some isNegative
-      throw "negative sides are illegal"
+      throw new Error("negative sides are illegal")
     else if !triangleInequalityCheck @a, @b, @c
-      throw "violation of triangle inequality"
+      throw new Error("violation of triangle inequality")
 
   kind: ->
     if @a is @b is @c
