@@ -3,7 +3,7 @@
 module.exports = class Triangle
   constructor: (@a, @b, @c) ->
     if [@a, @b, @c].some isNegative
-      throw new Error("negative sides are illegal")
+      throw new Error("negative or zero sides are illegal")
     else if !triangleInequalityCheck @a, @b, @c
       throw new Error("violation of triangle inequality")
 
@@ -15,7 +15,7 @@ module.exports = class Triangle
     else
       "scalene"
 
-isNegative = (val) -> val < 0
+isNegative = (val) -> val <= 0
 triangleInequalityCheck = (a, b, c) ->
   z = Math.max a, b, c
   a + b > z and a + c > z and b + c > z

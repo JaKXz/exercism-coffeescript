@@ -42,7 +42,10 @@ describe "Triangle", ->
     expect(triangle.kind()).toBe 'scalene'
 
   it 'is illegal when a side is negative', ->
-    expect(-> new Triangle(2,3,-5)).toThrow(new Error("negative sides are illegal"))
+    expect(-> new Triangle(2,3,-5)).toThrow(new Error("negative or zero sides are illegal"))
+
+  it "is illegal when a side is 0", ->
+    expect(-> new Triangle(0, 1, 2)).toThrow(new Error("negative or zero sides are illegal"))
 
   it 'is illegal when violating triangle inequality', ->
     expect(-> new Triangle(1,1,3)).toThrow(new Error("violation of triangle inequality"))
