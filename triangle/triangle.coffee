@@ -8,7 +8,7 @@ module.exports = class Triangle
       throw "violation of triangle inequality"
 
   kind: ->
-    if @a is @b and @a is @c and @b is @c
+    if @a is @b is @c
       "equilateral"
     else if @b is @c or @a is @c or @a is @b
       "isosceles"
