@@ -1,18 +1,14 @@
+"use strict"
+
+utils = require "../numerical-parsers/utils"
+
 module.exports = class Trinary
   constructor: (input) ->
     @input = input.split ''
-    @isNotTrinary = @input.some (char) -> /[^0-2]/.test char
-    @default = 0
+    @isNotTrinary = utils.isValidCheck @input, /[^0-2]/
 
   toDecimal: ->
     if @isNotTrinary
-      @default
+      utils.defaultVal
     else
-      bits = @input.length - 1
-      @input
-        .map((i) -> +i)
-        .reduce ((result, element) ->
-          result += element * (3 ** bits)
-          bits -= 1
-          result
-        ), @default
+      @input.map((i) -> +i).reduce utils.reducer(3, @input.length - 1), 0
