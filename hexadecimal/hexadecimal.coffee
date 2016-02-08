@@ -3,19 +3,19 @@
 module.exports = class Hexadecimal
   constructor: (input) ->
     @input = input.split ''
-    @isNotHex = @input.some (char) -> /[g-z]/.test char
+    @isNotHex = @input.some (char) -> /[g-z]/i.test char
     @default = 0
 
   toDecimal: ->
     if @isNotHex
       @default
     else
-      bits = @input.length - 1
+      bit = @input.length - 1
       @input
         .map((char) -> if isNaN char then hexMap[char] else +char)
         .reduce ((result, element) ->
-          result += element * (16 ** bits)
-          bits -= 1
+          result += element * (16 ** bit)
+          bit -= 1
           result
         ), @default
 

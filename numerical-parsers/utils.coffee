@@ -3,8 +3,8 @@
 module.exports =
   defaultVal: 0
   isValidCheck: (input, regex) -> input.some (val) -> regex.test val
-  reducer: (base, bits) ->
+  reducer: (base, bit) ->
     (result, element) ->
-      result += element * base ** bits
-      bits -= 1
+      result += element * base ** bit
+      bit -= 1
       result

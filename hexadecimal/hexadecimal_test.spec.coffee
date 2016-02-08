@@ -30,6 +30,10 @@ describe "Hexadecimal", ->
     hex = new Hexadecimal("carrot")
     expect(hex.toDecimal()).toEqual(0)
 
+  it "capital & invalid hex is decimal 0", ->
+    hex = new Hexadecimal("CARROT")
+    expect(hex.toDecimal()).toEqual(0)
+
   it "black", ->
     hex = new Hexadecimal("000000")
     expect(hex.toDecimal()).toEqual(0)
